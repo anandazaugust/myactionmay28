@@ -1,0 +1,13 @@
+name: test
+on: push
+jobs: 
+  myjob: 
+   runs-on: ubuntu-latest
+   steps:
+     - name: my-step
+       run: echo "HelloWorld"
+  myjob2: 
+   runs-on: ubuntu-latest
+   steps:
+     - name: my-step2
+       run: echo "HelloWorld2"
