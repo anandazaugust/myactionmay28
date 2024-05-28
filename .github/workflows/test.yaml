@@ -1,5 +1,16 @@
 name: myflow-2
-on: push
+on: 
+  workflow_dispatch:
+   inputs: 
+      choose-env: 
+       description: test
+       required: true
+       default: dev
+       options:
+        - dev
+        - prod
+        - uat
+
 jobs: 
   myjob: 
    runs-on: ubuntu-latest
