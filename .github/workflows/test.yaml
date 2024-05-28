@@ -1,4 +1,4 @@
-name: test
+name: myflow-2
 on: push
 jobs: 
   myjob: 
