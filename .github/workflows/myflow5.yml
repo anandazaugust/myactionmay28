@@ -1,0 +1,25 @@
+name: myflow-4
+on: 
+  workflow_dispatch:
+   inputs: 
+      choose-env: 
+       description: test
+       required: true
+       type: choice
+       default: dev
+       options:
+        - dev
+        - prod
+        - uat
+
+jobs: 
+  devuatb: 
+   runs-on: ubuntu-latest
+   steps:
+     - name: uat job
+       if: ${{inputs.choose-env == 'uat'}}
+       run: echo "this is uat"
+ 
+     - name: dev job
+       if: ${{inputs.choose-env == 'dev'}}
+       run: echo "this is dev"
