@@ -5,6 +5,7 @@ on:
       choose-env: 
        description: test
        required: true
+       type: choice
        default: dev
        options:
         - dev
