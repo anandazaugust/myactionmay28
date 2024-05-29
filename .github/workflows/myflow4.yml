@@ -17,11 +17,11 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - name: uat job
-       if: ${{inputs.choose-env == "uat"}}
+       if: ${{inputs.choose-env == 'uat'}}
        run: echo "this is uat"
   myjob2: 
    runs-on: ubuntu-latest
    steps:
      - name: dev job
-       if: ${{inputs.choose-env == "dev"}}
+       if: ${{inputs.choose-env == 'dev'}}
        run: echo "this is dev"
