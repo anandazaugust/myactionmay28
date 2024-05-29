@@ -4,7 +4,7 @@ on:
    inputs: 
       choose-env: 
        description: test
-       type: choice
+      #  type: choice
        required: true
        default: dev
        options:
