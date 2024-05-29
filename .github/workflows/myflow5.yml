@@ -12,6 +12,9 @@ on:
         - prod
         - uat
 
+permissions:
+ id-token: write
+
 jobs: 
   devuatb: 
    runs-on: ubuntu-latest
