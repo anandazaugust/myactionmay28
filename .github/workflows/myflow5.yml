@@ -13,15 +13,13 @@ on:
         - uat
 
 jobs: 
-  uat_job: 
+  devuatb: 
    runs-on: ubuntu-latest
    steps:
      - name: uat job
        if: ${{inputs.choose-env == 'uat'}}
        run: echo "this is uat"
-  dev_job: 
-   runs-on: ubuntu-latest
-   steps:
+ 
      - name: dev job
        if: ${{inputs.choose-env == 'dev'}}
        run: echo "this is dev"
