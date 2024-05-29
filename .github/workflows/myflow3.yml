@@ -1,4 +1,4 @@
-name: myflow-2
+name: myflow-3
 on: 
   workflow_dispatch:
    inputs: 
