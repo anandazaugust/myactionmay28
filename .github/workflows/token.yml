@@ -1,4 +1,4 @@
-name: myflow-4
+name: token
 on: 
   workflow_dispatch:
    inputs: 
@@ -20,6 +20,14 @@ jobs:
    runs-on: ubuntu-latest
    environment: dev
    steps:
+
+     - name: Azure login
+       uses: azure/login@v2
+       with:
+          # client-id: ${{ secrets.client_id_azure}}
+          client-id: "3071f7cd-0553-4cd6-8303-d467147aafcc"
+          tenant-id: "17a09c66-f406-4897-8b24-51f5313623dc"
+          subscription-id: "6e54aa79-9b0b-40ed-ae27-91fdffa0a565"
      
      - name: get token
        
