@@ -31,6 +31,9 @@ jobs:
      
      - name: get token
        
-       run: az account get-access-token
+       run: |
+         az account get-access-token
+         token = $(az account get-access-token)
+         echo token
 
      
