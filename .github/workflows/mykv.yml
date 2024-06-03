@@ -47,6 +47,13 @@ jobs:
         # echo "$value1" >> $GITHUB_ENV
         echo "mytoken = $value1" >> $GITHUB_ENV
 
+     - name: show secret
+     
+       
+       run: |
+       
+        ${{steps.access_token_id.outputs.value2}}
+
      - name: set terraform token
        run: |
           mkdir ${HOME}/.terraform.d
