@@ -45,7 +45,8 @@ jobs:
         # echo "Secret Value: $value1"
         # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
         # echo "$value1" >> $GITHUB_ENV
-        echo "mytoken = $value1" >> $GITHUB_ENV
+        # echo "mytoken = $value1" >> $GITHUB_ENV
+        echo "mytoken = $value1" >> $GITHUB_output
 
      - name: show secret
      
