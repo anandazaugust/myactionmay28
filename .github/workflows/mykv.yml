@@ -53,7 +53,7 @@ jobs:
        
        run: |
        
-        echo ${{steps.access_token_id.outputs.mytoken}}
+        echo "${{steps.access_token_id.outputs.mytoken}}"
 
      - name: set terraform token
        run: |
