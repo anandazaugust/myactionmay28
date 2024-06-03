@@ -1,0 +1,44 @@
+name: mykv
+on: 
+  workflow_dispatch:
+   inputs: 
+      choose-env: 
+       description: test
+       required: true
+       type: choice
+       default: dev
+       options:
+        - dev
+        - prod
+        - uat
+
+permissions:
+ id-token: write
+
+jobs: 
+  devuatb: 
+   runs-on: ubuntu-latest
+   environment: dev
+   steps:
+     - name: uat job
+       if: ${{inputs.choose-env == 'uat'}}
+       run: echo "this is uat"
+ 
+     - name: dev job
+       if: ${{inputs.choose-env == 'dev'}}
+       run: echo "this is dev"
+
+     - name: Azure login
+       uses: azure/login@v2
+       with:
+          # client-id: ${{ secrets.client_id_azure}}
+          client-id: "3071f7cd-0553-4cd6-8303-d467147aafcc"
+          tenant-id: "17a09c66-f406-4897-8b24-51f5313623dc"
+          subscription-id: "6e54aa79-9b0b-40ed-ae27-91fdffa0a565"
+
+     - name: get keyvault secret
+       
+       run: |
+        value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
+        echo "Secret Value: $value1"
+        echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
