@@ -45,7 +45,7 @@ jobs:
         # echo "Secret Value: $value1"
         # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
         # echo "$value1" >> $GITHUB_ENV
-        "mytoken = $value1" >> $GITHUB_ENV
+        echo "mytoken = $value1" >> $GITHUB_ENV
 
      - name: set terraform token
        run: |
