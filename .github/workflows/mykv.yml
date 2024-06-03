@@ -44,7 +44,7 @@ jobs:
         value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
         # echo "Secret Value: $value1"
         # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
-        "$value1" >> $GITHUB_ENV
+        echo "$value1" >> $GITHUB_ENV
 
      - name: set terraform token
        run: |
