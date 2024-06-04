@@ -36,9 +36,39 @@ jobs:
           tenant-id: "17a09c66-f406-4897-8b24-51f5313623dc"
           subscription-id: "6e54aa79-9b0b-40ed-ae27-91fdffa0a565"
 
-     - name: get keyvault secret
+     - name: get keyvault secret  
+       id: access_token_id
+
        
        run: |
         value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
-        echo "Secret Value: $value1"
-        echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
+        # echo "Secret Value: $value1"
+        # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
+        # echo "$value1" >> $GITHUB_ENV
+        # echo "mytoken = $value1" >> $GITHUB_ENV
+        echo "mytoken = $value1" >> $GITHUB_OUTPUT
+
+     - name: show secret
+     
+       
+       run: |
+       
+        echo "${{steps.access_token_id.outputs.mytoken}}"
+
+     - name: set terraform token
+       run: |
+          mkdir ${HOME}/.terraform.d
+          cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
+          {
+            "credentials": {
+              "app.terraform.io": {
+                "token": ${{steps.access_token_id.outputs.value2}}
+              }
+            }
+          }
+          EOF
+     - name: Checkout repository
+       uses: actions/checkout@v2
+     - name: abcworkflow
+       uses: ./.github/actions/myflow3.yml
+
