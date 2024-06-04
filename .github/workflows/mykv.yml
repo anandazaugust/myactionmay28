@@ -71,4 +71,4 @@ jobs:
 
   devuatb2: 
     
-   uses: ./.github/workflows/myflow4.yml
+   uses: ./.github/actions/workflows/myflow4.yml
