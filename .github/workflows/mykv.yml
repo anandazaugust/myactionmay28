@@ -67,8 +67,13 @@ jobs:
             }
           }
           EOF
-     - name: Checkout repository
-       uses: actions/checkout@v2
-     - name: abcworkflow
-       uses: ./.github/actions/myflow3.yml
+     
 
+  devuatb2: 
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: abcworkflow
+      uses: ./.github/actions/myflow3.yml
