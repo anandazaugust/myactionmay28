@@ -69,6 +69,6 @@ jobs:
           EOF
      
 
-  # devuatb2: 
+  devuatb2: 
     
-  #    uses: ./.github/workflows/myflow3.yml
+   uses: ./.github/workflows/myflow3.yml
