@@ -76,4 +76,4 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
     - name: abcworkflow
-      uses: ./.github/actions/myflow3.yml
+      uses: ./.github/workflows/myflow3.yml
