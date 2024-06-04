@@ -70,10 +70,5 @@ jobs:
      
 
   devuatb2: 
-    runs-on: ubuntu-latest
-    environment: dev
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: abcworkflow
-      uses: ./.github/workflows/myflow3.yml
+    
+     uses: ./.github/workflows/myflow3.yml
