@@ -67,7 +67,8 @@ jobs:
             }
           }
           EOF
-
+     - name: Checkout repository
+       uses: actions/checkout@v2
      - name: abcworkflow
        uses: ./.github/workflows/myflow3.yml
 
