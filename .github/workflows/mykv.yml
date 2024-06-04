@@ -69,5 +69,5 @@ jobs:
           EOF
 
      - name: abcworkflow
-       uses: anandazaugust/myactionmay28/actions/workflows/myflow3.yml@feature1
+       uses: ./.github/workflows/myflow3.yml
 
