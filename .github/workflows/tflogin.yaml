@@ -48,7 +48,8 @@ jobs:
       #   echo "mytoken = $value1" >> $GITHUB_ENV
       #   # echo "mytoken = $value1" >> $GITHUB_OUTPUT
 
-         
+     - name: Checkout
+       uses: actions/checkout@v3
 
      - name: show secret
        run: |
