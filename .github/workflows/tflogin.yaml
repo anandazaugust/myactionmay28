@@ -65,7 +65,7 @@ jobs:
               {
                 "credentials": {
                   "app.terraform.io": {
-                    "token": "abcd" #${{steps.access_token_id.outputs.value2}}
+                    "token": "abcd" 
                   }
                 }
               }
