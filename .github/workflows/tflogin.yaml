@@ -41,6 +41,8 @@ jobs:
             echo "secret=blow" >> "$GITHUB_ENV"
      - name: show stuff
        run: echo "ehllo"
+       env:
+        test: test
 
      
        
