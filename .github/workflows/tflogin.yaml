@@ -38,7 +38,7 @@ jobs:
             echo "mytoken = $value1" >> $GITHUB_ENV
             # echo "mytoken = $value1" >> $GITHUB_OUTPUT
             echo "action_state=yellow" >> "$GITHUB_ENV"
-            echo "action_state_secret=blow" >> "$GITHUB_ENV"
+            echo "secret=blow" >> "$GITHUB_ENV"
      - name: show stuff
        run: echo "ehllo"
 
