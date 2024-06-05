@@ -79,3 +79,6 @@ jobs:
   number3: 
     
    uses: ./.github/workflows/myflow4.yml
+   with: 
+
+     choose-env: 'abc'
