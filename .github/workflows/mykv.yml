@@ -83,6 +83,6 @@ jobs:
      
      choose-env: 'uat'
   number4:
-    uses: ./.github/workflows/tflogin.yml
+    uses: ./.github/workflows/tflogin.yaml
     with:
      choose-env: 'dev'
