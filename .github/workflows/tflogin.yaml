@@ -54,6 +54,7 @@ jobs:
        run: |
         echo "$mytoken"
         echo "$action_state"
+        terraform init
      
        
       #  run: |
