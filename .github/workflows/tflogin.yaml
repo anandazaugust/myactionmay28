@@ -1,4 +1,4 @@
-name: mykv
+name: tflogin
 on: 
   workflow_dispatch:
   workflow_call:
