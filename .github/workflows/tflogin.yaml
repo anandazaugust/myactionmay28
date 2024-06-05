@@ -51,7 +51,9 @@ jobs:
          
 
      - name: show secret
-       run: echo "$mytoken"
+       run: |
+        echo "$mytoken"
+        echo "$action_state"
      
        
       #  run: |
