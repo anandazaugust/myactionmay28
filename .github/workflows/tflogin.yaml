@@ -50,12 +50,16 @@ jobs:
 
      - name: Checkout
        uses: actions/checkout@v3
+       
 
-     - name: show secret
+     - name: show secret  
+       working-directory: ./terraform
+
        run: |
         echo "$mytoken"
         echo "$action_state"
         terraform init
+        
      
        
       #  run: |
