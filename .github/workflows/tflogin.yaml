@@ -55,7 +55,7 @@ jobs:
      - name: show secret  
        working-directory: ./terraform
        env: 
-        arm_tenant_id: "17a09c66-f406-4897-8b24-51f5313623dc"
+        ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
         arm_client_id       : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
         arm_client_secret   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
 
