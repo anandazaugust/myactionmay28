@@ -37,6 +37,7 @@ jobs:
             # echo "$value1" >> $GITHUB_ENV
             echo "mytoken = $value1" >> $GITHUB_ENV
             # echo "mytoken = $value1" >> $GITHUB_OUTPUT
+            echo "action_state=yellow" >> "$GITHUB_ENV"
        
       #  run: |
       #   value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
