@@ -8,7 +8,7 @@ on:
        description: test
        required: true
        type: string
-       default: dev
+       default: 'dev'
       #  options:
       #   - dev
       #   - prod
