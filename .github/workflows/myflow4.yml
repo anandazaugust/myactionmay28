@@ -1,16 +1,18 @@
 name: myflow-4
 on: 
   workflow_dispatch:
+  workflow_call:
+    
    inputs: 
       choose-env: 
        description: test
        required: true
-       type: choice
-       default: dev
-       options:
-        - dev
-        - prod
-        - uat
+       type: string
+       default: 'dev'
+      #  options:
+      #   - dev
+      #   - prod
+      #   - uat
 
 jobs: 
   uat_job: 

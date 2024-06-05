@@ -72,6 +72,17 @@ jobs:
   #      uses: ./.github/actions/workflows/myflow4.yml
      
 
-  devuatb2: 
+  number2: 
     
-   uses: anandazaugust/myactionmay28/.github/workflows/mykv.yml
+   uses: ./.github/workflows/myflow3.yml
+
+  number3: 
+    
+   uses: ./.github/workflows/myflow4.yml
+   with: 
+     
+     choose-env: 'uat'
+  number4:
+    uses: ./.github/workflows/tflogin.yml
+    with:
+     choose-env: 'dev'
