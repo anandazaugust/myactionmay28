@@ -32,8 +32,8 @@ jobs:
 
        
        run: |
-        # value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
-        echo "value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)"
+        value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
+        # echo "value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)"
         # echo "Secret Value: $value1"
         # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
         # echo "$value1" >> $GITHUB_ENV
@@ -41,7 +41,7 @@ jobs:
         # echo "mytoken = $value1" >> $GITHUB_OUTPUT
 
      - name: show secret
-       run: abcd
+       run: echo "hellorun"
      
        
       #  run: |
