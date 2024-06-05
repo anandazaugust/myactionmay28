@@ -80,5 +80,5 @@ jobs:
     
    uses: ./.github/workflows/myflow4.yml
    with: 
-
-     choose-env: 'abc'
+     
+     choose-env: 'uat'
