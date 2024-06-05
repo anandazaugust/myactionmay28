@@ -57,6 +57,19 @@ jobs:
 
      - name: Checkout
        uses: actions/checkout@v3
+
+     - name: set terraform token
+       run: |
+              mkdir ${HOME}/.terraform.d
+              cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
+              {
+                "credentials": {
+                  "app.terraform.io": {
+                    "token": "abcd" #${{steps.access_token_id.outputs.value2}}
+                  }
+                }
+              }
+              EOF
        
 
      - name: show secret  
