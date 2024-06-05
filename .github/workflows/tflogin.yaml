@@ -54,6 +54,8 @@ jobs:
 
      - name: show secret  
        working-directory: ./terraform
+       env: 
+        tenant-id: "17a09c66-f406-4897-8b24-51f5313623dc"
 
        run: |
         echo "$mytoken"
