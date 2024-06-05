@@ -27,17 +27,21 @@ jobs:
     #       tenant-id: "17a09c66-f406-4897-8b24-51f5313623dc"
     #       subscription-id: "6e54aa79-9b0b-40ed-ae27-91fdffa0a565"
 
-    #  - name: get keyvault secret  
-    #    id: access_token_id
-    #    run: |
-    #         value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
-    #         # echo "value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)"
-    #         # echo "Secret Value: $value1"
-    #         # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
-    #         # echo "$value1" >> $GITHUB_ENV
-    #         echo "mytoken = $value1" >> $GITHUB_ENV
-    #         # echo "mytoken = $value1" >> $GITHUB_OUTPUT
-    #         echo "action_state=yellow" >> "$GITHUB_ENV"
+     - name: get keyvault secret  
+       id: access_token_id
+       run: |
+            # value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
+            # echo "value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)"
+            # echo "Secret Value: $value1"
+            # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
+            # echo "$value1" >> $GITHUB_ENV
+            echo "mytoken = $value1" >> $GITHUB_ENV
+            # echo "mytoken = $value1" >> $GITHUB_OUTPUT
+            echo "action_state=yellow" >> "$GITHUB_ENV"
+     - name: show stuff
+       run: echo "ehllo"
+
+     
        
       #  run: |
       #   value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
@@ -52,22 +56,21 @@ jobs:
        uses: actions/checkout@v3
        
 
-     - name: show secret  
-       working-directory: ./terraform
-       env: 
-        ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
-        ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
-        ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
+    #  - name: show secret  
+    #    working-directory: ./terraform
+    #    env: 
+    #     ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
+    #     ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
+    #     ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
 
-       run: |
-        echo "$mytoken"
-        echo "$action_state"
-        terraform init
-        terraform validate
-        terraform plan
-        terraform apply -auto-approve
-        
-     
+    #    run: |
+    #     echo "$mytoken"
+    #     echo "$action_state"
+    #     terraform init
+    #     terraform validate
+    #     terraform plan
+    #     terraform apply -auto-approve
+       
        
       #  run: |
        
