@@ -95,7 +95,7 @@ jobs:
         {
             "credentials": {
               "app.terraform.io": {
-                "token": "ehewgZBYiSN0Lw.atlasv1.4E78DHGpmyB6jKEYX8PZf61e2pJ8JgAVr2LtKtC0hzbSaeLT1KQPQMxXkEpzE16hwck"
+                "token": "2WGlzyX6NczgCA.atlasv1.Xjea8kE88wT42W0N74zlTOSzBgnWVfEMhKIf8zZyqzZHv9zYCi9oAAUrQILMXyoCqaE"
               }
             }
           }
