@@ -84,6 +84,11 @@ jobs:
             }
           }
           EOF
+
+     - name: create folder
+       run: |
+        cd ~/${HOME}
+        mkdir terraform.d
      - name: display latest
        run: ls ${HOME}
 
