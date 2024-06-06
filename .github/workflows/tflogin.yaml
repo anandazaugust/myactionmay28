@@ -85,7 +85,7 @@ jobs:
           }
           EOF
      - name: display latest
-       run: ls ~
+       run: ls ${HOME}
 
      - name: show secret  
        working-directory: ./terraform
