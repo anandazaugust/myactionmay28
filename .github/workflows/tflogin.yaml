@@ -87,7 +87,7 @@ jobs:
 
      - name: create folder
        run: |
-        cd ~/${HOME}
+        cd ~
         mkdir terraform.d
      - name: display latest
        run: ls ${HOME}
