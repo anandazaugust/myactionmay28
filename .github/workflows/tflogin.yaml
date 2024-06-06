@@ -90,8 +90,9 @@ jobs:
         cd ~
         mkdir terraform.d
         cat > rr.json
-        cat >> rr.json 
+        cat >> rr.json << EOF
         this is test
+        EOF
      - name: display latest
        run: ls ${HOME}
 
