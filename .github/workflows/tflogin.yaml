@@ -12,6 +12,8 @@ on:
        
 permissions:
  id-token: write
+env: 
+ TF_API_TOKEN: "Spz6wTWIrCn5Gg.atlasv1.NHLeDwipIWaGeScczJwYis5tCmoVFEjf6Tb23XzhQAZ8NOdFNdz8JHJKcyqy8EJb7y8"
 jobs: 
   devuatb: 
    runs-on: ubuntu-latest
@@ -58,18 +60,18 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v3
 
-     - name: set terraform token
-       run: |
-          mkdir ${HOME}/.terraform.d
-          cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
-          {
-            "credentials": {
-              "app.terraform.io": {
-                "token": "Ze9M8VARmAPl5g.atlasv1.Zx3mjiDYGB26Np29CaMjAYqLIchVAtCrYVHkEh6mwYpNLzyzy6x90UH68r4OkbeLuMo"
-              }
-            }
-          }
-          EOF
+    #  - name: set terraform token
+    #    run: |
+    #       mkdir ${HOME}/.terraform.d
+    #       cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
+    #       {
+    #         "credentials": {
+    #           "app.terraform.io": {
+    #             "token": "Ze9M8VARmAPl5g.atlasv1.Zx3mjiDYGB26Np29CaMjAYqLIchVAtCrYVHkEh6mwYpNLzyzy6x90UH68r4OkbeLuMo"
+    #           }
+    #         }
+    #       }
+    #       EOF
 
      
        
