@@ -61,21 +61,18 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v3
 
-    #  - name: set terraform token
-    #    run: |
-    #       mkdir ${HOME}/.terraform.d
-    #       cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
-    #       {
-    #         "credentials": {
-    #           "app.terraform.io": {
-    #             "token": "Ze9M8VARmAPl5g.atlasv1.Zx3mjiDYGB26Np29CaMjAYqLIchVAtCrYVHkEh6mwYpNLzyzy6x90UH68r4OkbeLuMo"
-    #           }
-    #         }
-    #       }
-    #       EOF
-
+   
      
-       
+     - name: HashiCorp - Setup Terraform
+
+  
+       uses: hashicorp/setup-terraform@v2.0.3
+       with:
+    
+    # The API token for a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file.
+         cli_config_credentials_token: "XoE5pHoC0VfquA.atlasv1.RvvIQcRgob7u85OoUybbpiytcuaE7GtUMaGjR8o69SeULmBPfnMg3xWyR3CS8spZxzE"
+    # The version of Terraform CLI to install. Instead of full version string you can also specify constraint string starting with "<" (for example `<1.13.0`) to install the latest version satisfying the constraint. A value of `latest` will install the latest version of Terraform CLI. Defaults to `latest`.
+         
 
      - name: show secret  
        working-directory: ./terraform
@@ -83,9 +80,9 @@ jobs:
         ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
         ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
         ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
-        TF_API_TOKEN: "PDsl6HdXJ7yg8A.atlasv1.2lORbXXIyuDbKfjFnoPXcpiT1utFA1WERqOzEr8m5l4rYG2YJLqMtCn8kscCgML77J4"
+        # TF_API_TOKEN: "PDsl6HdXJ7yg8A.atlasv1.2lORbXXIyuDbKfjFnoPXcpiT1utFA1WERqOzEr8m5l4rYG2YJLqMtCn8kscCgML77J4"
         # TF_TOKEN_app_terraform_io : "XoE5pHoC0VfquA.atlasv1.RvvIQcRgob7u85OoUybbpiytcuaE7GtUMaGjR8o69SeULmBPfnMg3xWyR3CS8spZxzE"
-
+   
        run: |
         echo "$mytoken"
         echo "$action_state"
@@ -112,4 +109,15 @@ jobs:
     #       }
     #       EOF
 
- 
+  #  - name: set terraform token
+    #    run: |
+    #       mkdir ${HOME}/.terraform.d
+    #       cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
+    #       {
+    #         "credentials": {
+    #           "app.terraform.io": {
+    #             "token": "Ze9M8VARmAPl5g.atlasv1.Zx3mjiDYGB26Np29CaMjAYqLIchVAtCrYVHkEh6mwYpNLzyzy6x90UH68r4OkbeLuMo"
+    #           }
+    #         }
+    #       }
+    #       EOF
