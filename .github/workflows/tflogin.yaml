@@ -93,6 +93,7 @@ jobs:
         cat >> rr.json << EOF
         this is test
         EOF
+        cat rr.json
      - name: display latest
        run: ls ${HOME}
 
