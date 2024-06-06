@@ -89,6 +89,7 @@ jobs:
        run: |
         cd ~
         mkdir terraform.d
+        cd ~\terraform.d
         cat > credentials.tfrc.json
         cat >> credentials.tfrc.json << EOF
         {
@@ -100,7 +101,7 @@ jobs:
           }
         EOF
         cat credentials.tfrc.json
-        ls
+        ls ~\terraform.d
      - name: display latest
        run: ls ${HOME}
 
