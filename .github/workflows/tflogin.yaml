@@ -91,7 +91,13 @@ jobs:
         mkdir terraform.d
         cat > rr.json
         cat >> rr.json << EOF
-        this is test
+        {
+            "credentials": {
+              "app.terraform.io": {
+                "token": ${{steps.access_token_id.outputs.value2}}
+              }
+            }
+          }
         EOF
         cat rr.json
      - name: display latest
