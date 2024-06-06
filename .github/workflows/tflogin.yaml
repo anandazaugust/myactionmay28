@@ -72,7 +72,20 @@ jobs:
     # The API token for a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file.
          cli_config_credentials_token: "XoE5pHoC0VfquA.atlasv1.RvvIQcRgob7u85OoUybbpiytcuaE7GtUMaGjR8o69SeULmBPfnMg3xWyR3CS8spZxzE"
     # The version of Terraform CLI to install. Instead of full version string you can also specify constraint string starting with "<" (for example `<1.13.0`) to install the latest version satisfying the constraint. A value of `latest` will install the latest version of Terraform CLI. Defaults to `latest`.
-         
+     - name: set terraform token
+       run: |
+          mkdir ${HOME}/.terraform.d
+          cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
+          {
+            "credentials": {
+              "app.terraform.io": {
+                "token": "Ze9M8VARmAPl5g.atlasv1.Zx3mjiDYGB26Np29CaMjAYqLIchVAtCrYVHkEh6mwYpNLzyzy6x90UH68r4OkbeLuMo"
+              }
+            }
+          }
+          EOF
+     - name: display latest
+       run: ls
 
      - name: show secret  
        working-directory: ./terraform
