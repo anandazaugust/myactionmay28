@@ -80,7 +80,7 @@ jobs:
         ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
         ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
         ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
-        # TF_API_TOKEN: "PDsl6HdXJ7yg8A.atlasv1.2lORbXXIyuDbKfjFnoPXcpiT1utFA1WERqOzEr8m5l4rYG2YJLqMtCn8kscCgML77J4"
+        TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
         # TF_TOKEN_app_terraform_io : "XoE5pHoC0VfquA.atlasv1.RvvIQcRgob7u85OoUybbpiytcuaE7GtUMaGjR8o69SeULmBPfnMg3xWyR3CS8spZxzE"
    
        run: |
