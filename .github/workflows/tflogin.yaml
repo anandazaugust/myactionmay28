@@ -12,8 +12,9 @@ on:
        
 permissions:
  id-token: write
-env: 
- TF_API_TOKEN: "Spz6wTWIrCn5Gg.atlasv1.NHLeDwipIWaGeScczJwYis5tCmoVFEjf6Tb23XzhQAZ8NOdFNdz8JHJKcyqy8EJb7y8"
+ contents: read
+# env: 
+#  TF_API_TOKEN: "Spz6wTWIrCn5Gg.atlasv1.NHLeDwipIWaGeScczJwYis5tCmoVFEjf6Tb23XzhQAZ8NOdFNdz8JHJKcyqy8EJb7y8"
 jobs: 
   devuatb: 
    runs-on: ubuntu-latest
@@ -82,6 +83,7 @@ jobs:
         ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
         ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
         ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
+        TF_API_TOKEN: "Spz6wTWIrCn5Gg.atlasv1.NHLeDwipIWaGeScczJwYis5tCmoVFEjf6Tb23XzhQAZ8NOdFNdz8JHJKcyqy8EJb7y8"
         # TF_TOKEN_app_terraform_io : "XoE5pHoC0VfquA.atlasv1.RvvIQcRgob7u85OoUybbpiytcuaE7GtUMaGjR8o69SeULmBPfnMg3xWyR3CS8spZxzE"
 
        run: |
