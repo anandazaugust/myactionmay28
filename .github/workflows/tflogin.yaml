@@ -89,6 +89,8 @@ jobs:
        run: |
         cd ~
         mkdir terraform.d
+        cat rr.json
+
      - name: display latest
        run: ls ${HOME}
 
