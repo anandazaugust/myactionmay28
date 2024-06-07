@@ -113,7 +113,7 @@ jobs:
         ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
         TF_WORKSPACE : "api-workspace"
         # TF_API_TOKEN: ${{ secrets.TF_API_TOKEN }}
-        TF_TOKEN_app_terraform_io : "2WGlzyX6NczgCA.atlasv1.Xjea8kE88wT42W0N74zlTOSzBgnWVfEMhKIf8zZyqzZHv9zYCi9oAAUrQILMXyoCqaE"
+        TF_TOKEN_app_terraform_io : "OBrEOOIbgzxKoA.atlasv1.6vYBwoQ7aXB5zsehxbmNRFgDSfDoCXnF2wKpg4aD14oN0PQGnDxVLz5mmivDMc0dnuQ"
    
        run: |
         echo "$mytoken"
