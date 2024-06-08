@@ -9,3 +9,12 @@
 #     }
 #   }
 # }
+terraform {
+  cloud {
+    organization = "anand-terraform-free"
+
+    workspaces {
+      name = "api-workspace"
+    }
+  }
+}
