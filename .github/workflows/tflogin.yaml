@@ -10,12 +10,12 @@ on:
        type: string
        default: dev
 env: 
- 
-        ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
-        ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
-        ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
-        TF_WORKSPACE : "api-workspace"
-        TF_TOKEN_app_terraform_io : "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"      
+ ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
+ ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
+ ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
+ TF_WORKSPACE : "api-workspace"
+ TF_TOKEN_app_terraform_io : "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"     
+         
 permissions:
  id-token: write
  contents: read
