@@ -106,7 +106,7 @@ jobs:
     #    run: ls ${HOME}
 
      - name: show secret  
-       working-directory: ./terraform
+       
        
         # TF_TOKEN_app_terraform_io : "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"
    
@@ -120,6 +120,7 @@ jobs:
        
 
      - name: init step
+       working-directory: ./terraform
        run: |
       
         terraform init
