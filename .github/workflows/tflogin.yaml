@@ -94,8 +94,8 @@ jobs:
      - name: create folder
        run: |
         cd ~
-        mkdir .terraform.d
-        cd ~/.terraform.d
+        mkdir terraform.d
+        cd ~/terraform.d
         cat > credentials.tfrc.json
         cat >> credentials.tfrc.json << EOF
         {
@@ -107,7 +107,7 @@ jobs:
           }
         EOF
         cat credentials.tfrc.json
-        ls ~/.terraform.d
+        ls ~/terraform.d
      - name: display latest
        run: ls ${HOME}
 
