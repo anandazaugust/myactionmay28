@@ -14,7 +14,7 @@ env:
  ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
  ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
  TF_WORKSPACE : "api-workspace"
-#  TF_TOKEN_app_terraform_io : "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"     
+ TF_TOKEN_app_terraform_io : "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"     
          
 permissions:
  id-token: write
@@ -91,23 +91,23 @@ jobs:
     #       }
     #       EOF
 
-     - name: create folder
-       run: |
-        cd ~
-        mkdir terraform.d
-        cd ~/terraform.d
-        cat > credentials.tfrc.json
-        cat >> credentials.tfrc.json << EOF
-        {
-            "credentials": {
-              "app.terraform.io": {
-                "token": "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"
-              }
-            }
-          }
-        EOF
-        cat credentials.tfrc.json
-        ls ~/terraform.d
+    #  - name: create folder
+    #    run: |
+    #     cd ~
+    #     mkdir terraform.d
+    #     cd ~/terraform.d
+    #     cat > credentials.tfrc.json
+    #     cat >> credentials.tfrc.json << EOF
+    #     {
+    #         "credentials": {
+    #           "app.terraform.io": {
+    #             "token": "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"
+    #           }
+    #         }
+    #       }
+    #     EOF
+    #     cat credentials.tfrc.json
+    #     ls ~/terraform.d
      - name: display latest
        run: ls ${HOME}
 
