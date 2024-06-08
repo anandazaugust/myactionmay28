@@ -119,7 +119,7 @@ jobs:
         # # terraform apply -auto-approve
        
 
-     - name: test
+     - name: init step
        run: |
       
         terraform init
