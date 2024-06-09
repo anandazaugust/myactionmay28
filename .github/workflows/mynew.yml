@@ -43,7 +43,7 @@ jobs:
 
        run: |
   
-        debug = tf_log terraform init
+        tf_log = debug terraform init
         cat /home/terraform-debug.log
         # # terraform validate
         # # terraform plan
