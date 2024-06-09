@@ -36,7 +36,7 @@ jobs:
      - name: debug
        run: |
         ls ~
-        ls ~\runners
+        ls ~/runners
 
 
           
