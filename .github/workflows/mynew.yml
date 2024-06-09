@@ -33,7 +33,12 @@ jobs:
          
     #        cli_config_credentials_token: "mJzccBKquUHPmA.atlasv1.p6GtfAKKzKQMTUjpk3q1MuG9iNm9yG9i9fXIhD8LfIvzM3nCZW09FveOLmOWQEQk5pU"
         
-   
+     - name: debug
+       run: |
+        ls ~
+        ls ~\runner
+
+
           
   
      - name: terrainit
@@ -45,9 +50,7 @@ jobs:
   
         
 
-     - name: debug
-       run: cat /home/terraform-debug.log
-
+     
        
        
 
