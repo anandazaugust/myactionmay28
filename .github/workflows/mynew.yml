@@ -41,13 +41,14 @@ jobs:
 
    
 
-       run: |
+       run: terraform init
   
-        tf_log = debug terraform init
-        cat /home/terraform-debug.log
-        # # terraform validate
-        # # terraform plan
-        # # terraform apply -auto-approve
+        
+
+     - name: debug
+       run: cat /home/terraform-debug.log
+
+       
        
 
  
