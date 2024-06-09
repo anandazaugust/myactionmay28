@@ -1,0 +1,38 @@
+name: mynew
+on: 
+  workflow_dispatch:
+  workflow_call:
+    
+ 
+env: 
+ ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
+ ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
+ ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
+ TF_WORKSPACE : "api-workspace"
+ TF_TOKEN_app_terraform_io : "Es59plk79rxzCQ.atlasv1.DeGIp7BOagPyZFkN3Xfs1cC5mt4CG0OxnMIvJ8gOyHfpy16CK7bctQSBZhpUw9AerSA"     
+
+jobs: 
+  devuatb: 
+   runs-on: ubuntu-latest
+   environment: dev
+   steps:
+
+
+    #  - name: create folder
+    #    run: |
+  
+     - name: terrainit
+
+
+
+       run: |
+  
+        terraform init
+        # # terraform validate
+        # # terraform plan
+        # # terraform apply -auto-approve
+       
+
+ 
+
+ 
