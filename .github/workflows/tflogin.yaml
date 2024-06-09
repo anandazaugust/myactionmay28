@@ -9,9 +9,18 @@ on:
        required: true
        type: string
        default: dev
-       
+env: 
+ ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
+ ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
+ ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
+ TF_WORKSPACE : "api-workspace"
+ TF_TOKEN_app_terraform_io : "Es59plk79rxzCQ.atlasv1.DeGIp7BOagPyZFkN3Xfs1cC5mt4CG0OxnMIvJ8gOyHfpy16CK7bctQSBZhpUw9AerSA"     
+#  TF_API_TOKEN : "Es59plk79rxzCQ.atlasv1.DeGIp7BOagPyZFkN3Xfs1cC5mt4CG0OxnMIvJ8gOyHfpy16CK7bctQSBZhpUw9AerSA"     
 permissions:
  id-token: write
+ contents: read
+# env: 
+#  TF_API_TOKEN: "Spz6wTWIrCn5Gg.atlasv1.NHLeDwipIWaGeScczJwYis5tCmoVFEjf6Tb23XzhQAZ8NOdFNdz8JHJKcyqy8EJb7y8"
 jobs: 
   devuatb: 
    runs-on: ubuntu-latest
@@ -19,32 +28,118 @@ jobs:
    steps:
     
 
-     - name: Azure login
-       uses: azure/login@v2
-       with:
-          # client-id: ${{ secrets.client_id_azure}}
-          client-id: "3071f7cd-0553-4cd6-8303-d467147aafcc"
-          tenant-id: "17a09c66-f406-4897-8b24-51f5313623dc"
-          subscription-id: "6e54aa79-9b0b-40ed-ae27-91fdffa0a565"
+    #  - name: Azure login
+    #    uses: azure/login@v2
+    #    with:
+    #       # client-id: ${{ secrets.client_id_azure}}
+    #       client-id: "3071f7cd-0553-4cd6-8303-d467147aafcc"
+    #       tenant-id: "17a09c66-f406-4897-8b24-51f5313623dc"
+    #       subscription-id: "6e54aa79-9b0b-40ed-ae27-91fdffa0a565"
 
      - name: get keyvault secret  
        id: access_token_id
-
-       
        run: |
-        value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
-        # echo "Secret Value: $value1"
-        # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
-        # echo "$value1" >> $GITHUB_ENV
-        echo "mytoken = $value1" >> $GITHUB_ENV
-        # echo "mytoken = $value1" >> $GITHUB_OUTPUT
+            # value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
+            # echo "value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)"
+            # echo "Secret Value: $value1"
+            # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
+            # echo "$value1" >> $GITHUB_ENV
+            echo "mytoken = $value1" >> $GITHUB_ENV
+            # echo "mytoken = $value1" >> $GITHUB_OUTPUT
+            echo "action_state=yellow" >> "$GITHUB_ENV"
+            echo "secret=blow" >> "$GITHUB_ENV"
+     - name: show stuff
+       run: echo "ehllo"
+       env:
+        test: test
 
-     - name: show secret
      
        
+      #  run: |
+      #   value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)
+      #   # echo "value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv)"
+      #   # echo "Secret Value: $value1"
+      #   # echo "KVSECRET_VALUE=$value1" >> $GITHUB_ENV
+      #   # echo "$value1" >> $GITHUB_ENV
+      #   echo "mytoken = $value1" >> $GITHUB_ENV
+      #   # echo "mytoken = $value1" >> $GITHUB_OUTPUT
+
+     - name: Checkout
+       uses: actions/checkout@v3
+
+   
+     
+    #  - name: HashiCorp - Setup Terraform
+
+  
+    #    uses: hashicorp/setup-terraform@v2.0.3
+    #    with:
+    
+    # # The API token for a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file.
+    #      cli_config_credentials_token: "XoE5pHoC0VfquA.atlasv1.RvvIQcRgob7u85OoUybbpiytcuaE7GtUMaGjR8o69SeULmBPfnMg3xWyR3CS8spZxzE"
+    # # The version of Terraform CLI to install. Instead of full version string you can also specify constraint string starting with "<" (for example `<1.13.0`) to install the latest version satisfying the constraint. A value of `latest` will install the latest version of Terraform CLI. Defaults to `latest`.
+    #  - name: set terraform token
+    #    run: |
+    #       mkdir ${HOME}/.terraform.d
+    #       cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
+    #       {
+    #         "credentials": {
+    #           "app.terraform.io": {
+    #             "token": "Ze9M8VARmAPl5g.atlasv1.Zx3mjiDYGB26Np29CaMjAYqLIchVAtCrYVHkEh6mwYpNLzyzy6x90UH68r4OkbeLuMo"
+    #           }
+    #         }
+    #       }
+    #       EOF
+
+    #  - name: create folder
+    #    run: |
+    #     cd ~
+    #     mkdir terraform.d
+    #     cd ~/terraform.d
+    #     cat > credentials.tfrc.json
+    #     cat >> credentials.tfrc.json << EOF
+    #     {
+    #         "credentials": {
+    #           "app.terraform.io": {
+    #             "token": "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"
+    #           }
+    #         }
+    #       }
+    #     EOF
+    #     cat credentials.tfrc.json
+    #     ls ~/terraform.d
+     - name: display latest
+       run: ls ${HOME}
+
+     - name: show secret  
+      #  working-directory: ./terraform
+      #  env: 
+      #   ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
+      #   ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
+      #   ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
+      #   TF_WORKSPACE : "api-workspace"
+      #   TF_API_TOKEN: "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"
+        # TF_TOKEN_app_terraform_io : "os9qBXFI7wmNuw.atlasv1.z3TyAKGQTXn3FXnYzlB6y2rJzlJG8sGFnGa6wZPNtEYSIKwGiWuVd0ohYGeHyKyzwJ8"
+   
        run: |
+        echo "$mytoken"
+        echo "$action_state"
+        # terraform init
+        # # terraform validate
+        # # terraform plan
+        # # terraform apply -auto-approve
        
-        echo $"mytoken"
+
+     - name: test
+       working-directory: ./terraform
+       run: |
+         terraform init
+        # terraform plan
+        # terraform apply -auto-approve
+       
+      #  run: |
+       
+      #   echo "$mytoken"
 
     #  - name: set terraform token
     #    run: |
@@ -59,4 +154,15 @@ jobs:
     #       }
     #       EOF
 
- 
+  #  - name: set terraform token
+    #    run: |
+    #       mkdir ${HOME}/.terraform.d
+    #       cat > ${HOME}/.terraform.d/credentials.tfrc.json << EOF
+    #       {
+    #         "credentials": {
+    #           "app.terraform.io": {
+    #             "token": "Ze9M8VARmAPl5g.atlasv1.Zx3mjiDYGB26Np29CaMjAYqLIchVAtCrYVHkEh6mwYpNLzyzy6x90UH68r4OkbeLuMo"
+    #           }
+    #         }
+    #       }
+    #       EOF
