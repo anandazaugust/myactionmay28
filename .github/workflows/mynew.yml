@@ -48,7 +48,10 @@ jobs:
 
    
 
-       run: terraform init
+       run: |
+        terraform init
+        terraform plan
+        terraform apply -auto-approve
   
         
 
