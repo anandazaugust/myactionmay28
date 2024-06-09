@@ -9,8 +9,8 @@ env:
  ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
  ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
  TF_WORKSPACE : "api-workspace"
- TF_LOG : debug
- TF_LOG_PATH: /home/terraform-debug.log
+#  TF_LOG : debug
+#  TF_LOG_PATH: /home/terraform-debug.log
  TF_TOKEN_app_terraform_io : "mJzccBKquUHPmA.atlasv1.p6GtfAKKzKQMTUjpk3q1MuG9iNm9yG9i9fXIhD8LfIvzM3nCZW09FveOLmOWQEQk5pU"   
 permissions:
  id-token: write
@@ -33,10 +33,10 @@ jobs:
          
     #        cli_config_credentials_token: "mJzccBKquUHPmA.atlasv1.p6GtfAKKzKQMTUjpk3q1MuG9iNm9yG9i9fXIhD8LfIvzM3nCZW09FveOLmOWQEQk5pU"
         
-     - name: debug
-       run: |
-        # ls ~
-        ls ~/runners
+    #  - name: debug
+    #    run: |
+    #     # ls ~
+    #     ls ~/runners
 
 
           
