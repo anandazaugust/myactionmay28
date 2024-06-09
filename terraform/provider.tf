@@ -1,4 +1,6 @@
 terraform {
+
+    
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -7,6 +9,8 @@ terraform {
     azapi = {
       source = "azure/azapi"
     }
+
+    
   }
 }
 
