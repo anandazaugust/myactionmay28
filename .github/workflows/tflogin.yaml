@@ -14,8 +14,8 @@ env:
  ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
  ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
  TF_WORKSPACE : "api-workspace"
- TF_TOKEN_app_terraform_io : "Es59plk79rxzCQ.atlasv1.DeGIp7BOagPyZFkN3Xfs1cC5mt4CG0OxnMIvJ8gOyHfpy16CK7bctQSBZhpUw9AerSA"     
-         #a
+#  TF_TOKEN_app_terraform_io : "Es59plk79rxzCQ.atlasv1.DeGIp7BOagPyZFkN3Xfs1cC5mt4CG0OxnMIvJ8gOyHfpy16CK7bctQSBZhpUw9AerSA"     
+ TF_API_TOKEN : "Es59plk79rxzCQ.atlasv1.DeGIp7BOagPyZFkN3Xfs1cC5mt4CG0OxnMIvJ8gOyHfpy16CK7bctQSBZhpUw9AerSA"     
 permissions:
  id-token: write
  contents: read
