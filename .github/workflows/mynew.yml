@@ -20,11 +20,22 @@ jobs:
 
      - name: Checkout
        uses: actions/checkout@v3
+
+     - name: HashiCorp - Setup Terraform
+
+       uses: hashicorp/setup-terraform@v2.0.3
+       with:
+ 
+         
+           cli_config_credentials_token: "mJzccBKquUHPmA.atlasv1.p6GtfAKKzKQMTUjpk3q1MuG9iNm9yG9i9fXIhD8LfIvzM3nCZW09FveOLmOWQEQk5pU"
+        
+   
+          
   
      - name: terrainit
        working-directory: ./terraform
 
-
+   
 
        run: |
   
