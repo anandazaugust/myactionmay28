@@ -39,7 +39,7 @@ jobs:
 
        run: |
   
-        terraform init
+       TF_Log=debug terraform init
         # # terraform validate
         # # terraform plan
         # # terraform apply -auto-approve
