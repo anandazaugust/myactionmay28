@@ -11,7 +11,7 @@ env:
  TF_WORKSPACE : "api-workspace"
  TF_LOG : debug
  TF_LOG_PATH: /home/terraform-debug.log
-#  TF_TOKEN_app_terraform_io : "mJzccBKquUHPmA.atlasv1.p6GtfAKKzKQMTUjpk3q1MuG9iNm9yG9i9fXIhD8LfIvzM3nCZW09FveOLmOWQEQk5pU"   
+ TF_TOKEN_app_terraform_io : "mJzccBKquUHPmA.atlasv1.p6GtfAKKzKQMTUjpk3q1MuG9iNm9yG9i9fXIhD8LfIvzM3nCZW09FveOLmOWQEQk5pU"   
 permissions:
  id-token: write
  contents: read

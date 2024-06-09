@@ -1,4 +1,5 @@
 terraform {
+
   backend "remote" {
     hostname     = "app.terraform.io"
     organization = "anand-terraform-free"
@@ -7,6 +8,7 @@ terraform {
     workspaces {
       name = "api-workspace"
     }
+
   }
 }
 # terraform {
@@ -19,6 +21,3 @@ terraform {
 #   }
 # }
 
-credentials "app.terraform.io" {
-  token = "mJzccBKquUHPmA.atlasv1.p6GtfAKKzKQMTUjpk3q1MuG9iNm9yG9i9fXIhD8LfIvzM3nCZW09FveOLmOWQEQk5pU"
-}
