@@ -12,7 +12,7 @@ env:
 #  TF_LOG : debug
 #  TF_LOG_PATH: /home/terraform-debug.log
 #  TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
-#  TF_TOKEN_app_terraform_io : "${{ secrets.TF_API_TOKEN }}"
+ TF_TOKEN_app_terraform_io : "${{ secrets.TF_API_TOKEN }}"
 #  TF_TOKEN_app_terraform_io : "mJzccBKquUHPmA.atlasv1.p6GtfAKKzKQMTUjpk3q1MuG9iNm9yG9i9fXIhD8LfIvzM3nCZW09FveOLmOWQEQk5pU"   
 permissions:
  id-token: write
