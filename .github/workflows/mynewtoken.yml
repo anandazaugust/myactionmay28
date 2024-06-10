@@ -1,4 +1,4 @@
-name: mynew
+name: mynewtoken
 on: 
   workflow_dispatch:
   workflow_call:
