@@ -27,4 +27,7 @@ jobs:
     # with:
     #  choose-env: 'dev'
     secrets: inherit
-     
+
+ initjob:
+  uses: ./.github/workflows/init_job.yml
+  secrets: inherit
