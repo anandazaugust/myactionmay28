@@ -18,16 +18,7 @@ permissions:
 
 jobs: 
 
- number2: 
-    
-   uses: ./.github/workflows/myflow3.yml
 
- number3: 
-    
-   uses: ./.github/workflows/myflow4.yml
-   with: 
-     
-     choose-env: 'uat'
  number4:
     uses: ./.github/workflows/mynewtoken.yml
     with:
