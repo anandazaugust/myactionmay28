@@ -1,7 +1,7 @@
-name: mynew
+name: mynewtoken
 on: 
   workflow_dispatch:
-  workflow_call:
+  # workflow_call:
     
  
 env: 
@@ -27,23 +27,23 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v3
 
-     - name: create folder
-       run: |
-        cd ~
-        mkdir terraform.d
-        cd ~/terraform.d
-        cat > credentials.tfrc.json
-        cat >> credentials.tfrc.json << EOF
-        {
-            "credentials": {
-              "app.terraform.io": {
-                "token": "${{ secrets.TF_API_TOKEN }}"
-              }
-            }
-          }
-        EOF
-        cat credentials.tfrc.json
-        ls ~/terraform.d
+    #  - name: create folder
+    #    run: |
+    #     cd ~
+    #     mkdir .terraform.d
+    #     cd ~/.terraform.d
+    #     cat > credentials.tfrc.json
+    #     cat >> credentials.tfrc.json << EOF
+    #     {
+    #         "credentials": {
+    #           "app.terraform.io": {
+    #             "token": "${{ secrets.TF_API_TOKEN }}"
+    #           }
+    #         }
+    #       }
+    #     EOF
+    #     cat credentials.tfrc.json
+    #     ls ~/.terraform.d
 
           
   

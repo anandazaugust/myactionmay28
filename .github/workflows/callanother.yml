@@ -1,0 +1,34 @@
+name: callanother
+on: 
+  workflow_dispatch:
+   inputs: 
+      choose-env: 
+       description: test
+       required: true
+       type: choice
+       default: dev
+       options:
+        - dev
+        - prod
+        - uat
+
+permissions:
+ id-token: write
+ contents: read
+
+jobs: 
+
+ number2: 
+    
+   uses: ./.github/workflows/myflow3.yml
+
+ number3: 
+    
+   uses: ./.github/workflows/myflow4.yml
+   with: 
+     
+     choose-env: 'uat'
+ number4:
+    uses: ./.github/workflows/mynewtoken.yml
+    with:
+     choose-env: 'dev'
