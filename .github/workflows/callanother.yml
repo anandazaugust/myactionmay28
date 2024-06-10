@@ -21,5 +21,5 @@ jobs:
 
  number4:
     uses: ./.github/workflows/mynewtoken.yml
-    with:
-     choose-env: 'dev'
+    # with:
+    #  choose-env: 'dev'
