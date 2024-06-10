@@ -1,16 +1,19 @@
 name: callanother
 on: 
-  workflow_dispatch:
-   inputs: 
-      choose-env: 
-       description: test
-       required: true
-       type: choice
-       default: dev
-       options:
-        - dev
-        - prod
-        - uat
+  # workflow_dispatch:
+  pull_request:
+  
+
+  #  inputs: 
+  #     choose-env: 
+  #      description: test
+  #      required: true
+  #      type: choice
+  #      default: dev
+  #      options:
+  #       - dev
+  #       - prod
+  #       - uat
 
 permissions:
  id-token: write
