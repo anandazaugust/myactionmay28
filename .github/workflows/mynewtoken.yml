@@ -5,10 +5,7 @@ on:
     
  
 env: 
- ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
- ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
- ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
- TF_WORKSPACE : "api-workspace"
+
 #  TF_LOG : debug
 #  TF_LOG_PATH: /home/terraform-debug.log
 #  TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
@@ -56,9 +53,14 @@ jobs:
        id: access_token_id
        run: |
             value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv) 
-  
+            echo "mytoken = $value1" >> $GITHUB_ENV
      - name: terrainit
        working-directory: ./terraform
+      #  env:
+      #    ARM_TENANT_ID: "17a09c66-f406-4897-8b24-51f5313623dc"
+      #    ARM_CLIENT_ID      : "6589b09f-b35e-4dd2-86fc-d7a757d9f72e"
+      #    ARM_CLIENT_SECRET   : "NJY8Q~FE5ufe-fbK4Dlb6tzT8WNA9pvbl-nYlc-3" 
+      #    TF_WORKSPACE : "api-workspace"
 
    
 
