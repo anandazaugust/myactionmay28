@@ -45,7 +45,10 @@ jobs:
     #     cat credentials.tfrc.json
     #     ls ~/.terraform.d
 
-          
+     - name: get keyvault secret  
+       id: access_token_id
+       run: |
+            value1=$(az keyvault secret show --name test --vault-name ibo-rg-kv1 --query value -o tsv) 
   
      - name: terrainit
        working-directory: ./terraform
