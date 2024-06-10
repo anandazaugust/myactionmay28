@@ -23,5 +23,5 @@ jobs:
     uses: ./.github/workflows/mynewtoken.yml
     # with:
     #  choose-env: 'dev'
-    secrets:
-      inherit
+    secrets: inherit
+     
