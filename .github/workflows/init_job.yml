@@ -1,0 +1,34 @@
+name: terrainit
+on: 
+  workflow_dispatch:
+  workflow_call:
+    
+ 
+env: 
+
+ TF_TOKEN_app_terraform_io : "${{ secrets.TF_API_TOKEN }}"
+
+permissions:
+ id-token: write
+ contents: read
+jobs: 
+  devuatb: 
+   runs-on: ubuntu-latest
+   environment: dev
+   steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+
+    - name: terrainit
+      working-directory: ./terraform
+ 
+
+   
+
+      run: |
+        terraform init
+        terraform plan
+        # # terraform apply -auto-approve
+  
