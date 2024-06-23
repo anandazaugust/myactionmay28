@@ -18,8 +18,9 @@ permissions:
 
 jobs: 
   
-  number2: 
+  terraform_plan_job: 
     
    uses: ./.github/workflows/newtfplan.yml
+   secrets: inherit
 
  
