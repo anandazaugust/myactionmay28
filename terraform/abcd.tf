@@ -13,3 +13,9 @@ resource "azurerm_resource_group" "example3" {
   location = "West Europe"
   need = "tt"
 }
+
+resource "azurerm_resource_group" "example4" {
+  name     = "workspacestest4"
+  location = "West Europe"
+  need = "tt"
+}
