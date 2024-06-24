@@ -23,27 +23,33 @@ permissions:
 jobs: 
   devuatb: 
    runs-on: ubuntu-latest
-   name: terraform_plan_job
-   environment: dev
+   name: checkout
+  #  environment: dev
    steps:
 
      - name: Checkout
        uses: actions/checkout@v3
-
-     - name: terraform_init
-       working-directory: ./terraform
-       run: |
-         terraform init
-
+  terra_validate: 
+    runs-on: ubuntu-latest
+    name: terraform_validate_job
+    # environment: dev
+    steps:
      - name: terraform_validate
        working-directory: ./terraform
        run: |
+         terraform init
          terraform validate
 
+  terra_plan: 
+    runs-on: ubuntu-latest
+    name: terraform_plan_job
+    # environment: dev
+    steps:
      - name: terraform_plan
        working-directory: ./terraform
        run: |
-       
+         terraform init
          terraform plan
-      
+
+   
   
