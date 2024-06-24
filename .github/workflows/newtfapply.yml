@@ -21,45 +21,45 @@ permissions:
  contents: read
 
 jobs: 
-  init: 
-   runs-on: ubuntu-latest
-   name: terraform_init_job
-  #  environment: dev
-   steps:
+  terra_validate: 
+    runs-on: ubuntu-latest
+    name: terraform_validate_job
+    # environment: dev
+    steps:
 
      - name: Checkout
        uses: actions/checkout@v3
 
-     - name: terraform_init
-       working-directory: ./terraform
-       run: |
-         terraform init
-
-
      - name: terraform_validate
        working-directory: ./terraform
        run: |
+         terraform init
          terraform validate
 
+  terra_plan: 
+    runs-on: ubuntu-latest
+    name: terraform_plan_job
+    # environment: dev
+    
+    steps:
+     - name: Checkout
+       uses: actions/checkout@v3
      - name: terraform_plan
        working-directory: ./terraform
        run: |
+         terraform init
          terraform plan
 
- 
-     - name: approval_job
-       uses: trstringer/manual-approval@v1
-       with:
-        # secret: ${{ github.TOKEN }}
-        # approvers: user1,user2,org-team1
-        minimum-approvals: 1
-        issue-title: "Move to Terraform Apply"
-        issue-body: "Please approve or deny the deployment of version v1.3.5."
-        exclude-workflow-initiator-as-approver: false
-        additional-approved-words: ''
-        additional-denied-words: ''
-
+  terra_apply: 
+    runs-on: ubuntu-latest
+    name: terraform_apply_job
+    environment: dev
+    
+    steps:
+     - name: Checkout
+       uses: actions/checkout@v3
      - name: terraform_apply
        working-directory: ./terraform
        run: |
+         terraform init
          terraform apply
