@@ -22,12 +22,12 @@ jobs:
 
    if: github.ref != 'refs/heads/main'
     
-   uses: ./.github/workflows/newtfapply.yml
+   uses: ./.github/workflows/newtfplan.yml
    secrets: inherit
 
   terraform_apply_job:
    if: github.ref == 'refs/heads/main'
-   uses: ./.github/workflows/newtfplan.yml
+   uses: ./.github/workflows/newtfapply.yml
    secrets: inherit
 
  
