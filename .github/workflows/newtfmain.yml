@@ -23,12 +23,13 @@ jobs:
 
    if: github.ref != 'refs/heads/main'
     
-   uses: ./.github/workflows/newtfplan.yml
+  #  uses: ./.github/workflows/newtfplan.yml
+   uses:  anandazaugust/terraformtemplate/.github/workflows/newtfplan.yml@test
    secrets: inherit
 
   terraform_apply_job:
    if: github.ref == 'refs/heads/main'
-   uses: ./.github/workflows/newtfapply.yml
+   uses: anandazaugust/terraformtemplate/.github/workflows/newtfplan.yml@test
    secrets: inherit
 
  
